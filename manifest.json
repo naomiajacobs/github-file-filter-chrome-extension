@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Getting started example",
-  "description": "Tutorial",
+  "name": "Github File Filter",
+  "description": "Chrome extension to allow you to easily filter files when reviewing a Github PR",
   "version": "1.0",
   "browser_action": {
     "default_icon": "icon.png",
