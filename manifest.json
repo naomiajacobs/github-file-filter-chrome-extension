@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Github File Filter",
   "description": "Chrome extension to allow you to easily filter files when reviewing a Github PR",
-  "version": "0.1",
+  "version": "1.0",
   "browser_action": {
     "default_icon": "filtering-data.png",
     "default_popup": "popup.html"
