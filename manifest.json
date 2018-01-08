@@ -4,7 +4,7 @@
   "description": "Chrome extension to allow you to easily filter files when reviewing a Github PR",
   "version": "0.1",
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "filtering-data.png",
     "default_popup": "popup.html"
   },
   "permissions": ["activeTab", "storage"]

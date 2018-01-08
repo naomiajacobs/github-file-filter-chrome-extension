@@ -1,5 +1,4 @@
 function filterFiles(extension) {
-  console.log('extension is: ', extension);
   chrome.tabs.executeScript({
       code: 'var extension = "' + extension + '";'
   }, function() {
@@ -7,11 +6,35 @@ function filterFiles(extension) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  var dropdown = document.getElementById('dropdown');
+function createOption(extension) {
+  const option = document.createElement('option');
+  option.value = extension;
+  const text = document.createTextNode('.' + extension);
+  option.appendChild(text);
+  return option;
+}
 
+function receiveMessage(extensions) {
+  const select = document.getElementById('dropdown');
+  for (const extension of Object.keys(extensions)) {
+    const option = createOption(extension);
+    select.appendChild(option);
+  }
+}
+
+function addOptions(callback) {
+  chrome.runtime.onMessage.addListener(function(extensions) {
+    receiveMessage(extensions);
+  });
+  chrome.tabs.executeScript({file: 'addOptions.js'}, callback);
+}
+
+function addChangeListener() {
   dropdown.addEventListener('change', () => {
-    console.log('selected item');
     filterFiles(dropdown.value);
   });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  addOptions(addChangeListener);
 });

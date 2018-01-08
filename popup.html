@@ -1,9 +1,4 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
   <head>
     <title>Github File Type Filter</title>
@@ -27,13 +22,6 @@
         padding-right: 5px;
       }
     </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
     <script src="popup.js"></script>
   </head>
 
@@ -43,9 +31,6 @@
       <span>Choose a filetype to show</span>
       <select id="dropdown">
         <option selected value=''>Reset</option>
-        <option value="rb">Ruby</option>
-        <option value="js">Javascript / JSX</option>
-        <option value="coffee">CoffeeScript</option>
       </select>
     </div>
   </body>
